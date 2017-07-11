@@ -1,0 +1,61 @@
+Search bar (elasticsearch integration)
+
+Clean up and style all form displays
+- New adventure
+- Filters sidebar
+- User registration
+
+Make css sexier
+- home page
+- adventure detail page
+
+-- deploy RC1
+
+Profile page (includes list of added adventures)
+
+Comments
+
+Ratings
+
+About page
+
+Contact page
+
+Email backend
+
+*********
+COMPLETE
+*********
+Finish adding fields to adventure form
+
+User authentication
+- login
+- logout
+- registration
+- password reset
+- permissions
+
+Delete adventure (admin only; be sure to add permissions as needed)
+Edit adventure (if authored or admin; be sure to add permissions as needed)
+Save user when creating new adventure
+
+
+*******
+NOTES
+*******
+testuser; testpwd1234
+testauthor; author1234
+
+
+Elastisearch integration
+- Django form that uses GET to create search URL
+- Submit button creates POST
+
+if form.is_valid():
+	search_string = form.cleaned_data['query']
+	search_string.split()... HANDLE STRING PARSING AND FORMAT FOR URL
+	url = 'http://ES-URL-ROOT/' + append(search_string)
+	# SUBMIT URL TO ES
+
+- POST url sent to ES
+- Handle returned results

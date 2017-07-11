@@ -1,0 +1,13 @@
+
+{% block content %}
+  <h1>Some detail</h1>
+  <h1>Title: {{ adventure.adv_title }}</h1>
+  <p>Submitted by {{ adventure.submitted_by.get_username }}</p>
+  {% if perms.lookup.can_edit_all_adventures or adventure.submitted_by == user %}
+    <a href="update/">Edit</a>
+  {% endif %}
+  {% if perms.lookup.delete_adventure %}
+    <a href="delete/">Delete</a>
+  {% endif %}
+  
+{% endblock %}
